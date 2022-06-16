@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useMemo, useState } from "react"
 import { Box, ThemeProvider } from "@mui/material"
-import { DarkTheme, LightTheme } from "./../themes"
+import { DarkTheme, LightTheme } from './../themes'
 
 interface IThemecontextData {
   themeName: 'light' | 'dark',
