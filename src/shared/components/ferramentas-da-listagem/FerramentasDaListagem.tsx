@@ -1,4 +1,3 @@
-import { AccountCircle } from '@mui/icons-material'
 import {
   Box,
   Button,
@@ -6,19 +5,19 @@ import {
   InputAdornment,
   Paper,
   TextField,
-  useTheme
+  useTheme,
 } from '@mui/material'
 
-interface IBarraDeFerramentasProps {
-  textoDaBusca?: string,
-  mostrarInputBusca?: boolean,
-  aoMudarTextoDeBusca?: (novoTexto: string) => void,
-  textoBotaoNovo?: string,
-  mostrarBotaoNovo?: boolean,
-  aoClicarEmNovo?: () => void,
+interface IFerramentasDaListagemProps {
+  textoDaBusca?: string;
+  mostrarInputBusca?: boolean;
+  aoMudarTextoDeBusca?: (novoTexto: string) => void;
+  textoBotaoNovo?: string;
+  mostrarBotaoNovo?: boolean;
+  aoClicarEmNovo?: () => void;
 }
 
-export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({ 
+export const FerramentasDaListagem: React.FC<IFerramentasDaListagemProps> = ({
   textoDaBusca = '',
   mostrarInputBusca = false,
   aoMudarTextoDeBusca,
@@ -28,7 +27,7 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
 }) => {
   const theme = useTheme()
 
-  return(
+  return (
     <Box
       gap={1}
       marginX={1}
@@ -38,9 +37,9 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
       alignItems="center"
       height={theme.spacing(5)}
       component={Paper}
-    > 
+    >
       {mostrarInputBusca && (
-        <TextField 
+        <TextField
           size="small"
           value={textoDaBusca}
           onChange={(e) => aoMudarTextoDeBusca?.(e.target.value)}
@@ -55,11 +54,7 @@ export const BarraDeFerramentas: React.FC<IBarraDeFerramentasProps> = ({
         />
       )}
 
-      <Box
-        flex={1}
-        display="flex"
-        justifyContent="end"
-      >
+      <Box flex={1} display="flex" justifyContent="end">
         {mostrarBotaoNovo && (
           <Button
             color="primary"
