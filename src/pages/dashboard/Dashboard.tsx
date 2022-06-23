@@ -10,8 +10,10 @@ export const Dashboard = () => {
       titulo="Página inicial"
       barraDeFerramentas={
         <FerramentasDeDetalhes
+          mostrarBotaoNovo
           mostrarBotaoSalvarEVoltar
           mostrarBotaoSalvarEVoltarCarregando
+          mostrarBotaoVoltar = {false}
         />
       }
     >
