@@ -1,4 +1,12 @@
-import { Box, Button, Divider, Icon, Paper, useTheme } from '@mui/material'
+import {
+  Box,
+  Button,
+  Divider,
+  Icon,
+  Paper,
+  Skeleton,
+  useTheme
+} from '@mui/material'
 
 interface IFerramentasDeDetalhesProps {
   textoBotaoNovo?: string,
@@ -7,13 +15,19 @@ interface IFerramentasDeDetalhesProps {
   mostrarBotaoVoltar?: boolean,
   mostrarBotaoApagar?: boolean,
   mostrarBotaoSalvar?: boolean,
-  mostrarBotaoSalvarEFechar?: boolean,
+  mostrarBotaoSalvarEVoltar?: boolean,
+
+  mostrarBotaoNovoCarregando?: boolean,
+  mostrarBotaoVoltarCarregando?: boolean,
+  mostrarBotaoApagarCarregando?: boolean,
+  mostrarBotaoSalvarCarregando?: boolean,
+  mostrarBotaoSalvarEVoltarCarregando?: boolean,
 
   aoClicarEmNovo?: () => void,
   aoClicarEmVoltar?: () => void,
   aoClicarEmApagar?: () => void,
   aoClicarEmSalvar?: () => void,
-  aoClicarEmSalvarEFechar?: () => void,
+  aoClicarEmSalvarEVoltar?: () => void,
 }
 
 export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
@@ -23,13 +37,19 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
   mostrarBotaoVoltar = true,
   mostrarBotaoApagar = true,
   mostrarBotaoSalvar = true,
-  mostrarBotaoSalvarEFechar = false,
+  mostrarBotaoSalvarEVoltar = false,
+
+  mostrarBotaoNovoCarregando = false,
+  mostrarBotaoVoltarCarregando = false,
+  mostrarBotaoApagarCarregando = false,
+  mostrarBotaoSalvarCarregando = false,
+  mostrarBotaoSalvarEVoltarCarregando = false,
 
   aoClicarEmNovo,
   aoClicarEmVoltar,
   aoClicarEmApagar,
   aoClicarEmSalvar,
-  aoClicarEmSalvarEFechar,
+  aoClicarEmSalvarEVoltar,
 }) => {
   const theme = useTheme()
 
@@ -44,7 +64,7 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
       height={theme.spacing(5)}
       component={Paper}
     >
-      {mostrarBotaoSalvar && (
+      {(mostrarBotaoSalvar && !mostrarBotaoSalvarCarregando) && (
         <Button
           color="primary"
           disableElevation
@@ -56,19 +76,28 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
         </Button>
       )}
       
-      {mostrarBotaoSalvarEFechar &&(
+
+      {mostrarBotaoSalvarCarregando && (
+        <Skeleton width={110} height={60} />
+      )}
+
+      {(mostrarBotaoSalvarEVoltar && !mostrarBotaoSalvarEVoltarCarregando) &&(
         <Button
           color="primary"
           disableElevation
           variant="outlined"
-          onClick={aoClicarEmSalvarEFechar}
+          onClick={aoClicarEmSalvarEVoltar}
           startIcon={<Icon>save</Icon>}
         >
           Salvar e voltar
         </Button>
       )}
 
-      {mostrarBotaoApagar &&(
+      {mostrarBotaoSalvarEVoltarCarregando &&(
+        <Skeleton width={178} height={60} />
+      )}
+
+      {(mostrarBotaoApagar && !mostrarBotaoApagarCarregando) &&(
         <Button
           color="primary"
           disableElevation
@@ -80,7 +109,11 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
         </Button>
       )}
       
-      {mostrarBotaoNovo &&(
+      {mostrarBotaoApagarCarregando &&(
+        <Skeleton width={112} height={60} />
+      )}
+      
+      {(mostrarBotaoNovo && !mostrarBotaoNovoCarregando) &&(
         <Button
           color="primary"
           disableElevation
@@ -92,12 +125,16 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
         </Button>
       )}
 
+      {mostrarBotaoNovoCarregando &&(
+        <Skeleton width={96} height={60} />
+      )}
+
       <Divider
         variant="middle"
         orientation="vertical"
       />
 
-      {mostrarBotaoVoltar &&(
+      {(mostrarBotaoVoltar && !mostrarBotaoVoltarCarregando) &&(
         <Button
           color="primary"
           disableElevation
@@ -109,6 +146,10 @@ export const FerramentasDeDetalhes: React.FC<IFerramentasDeDetalhesProps> = ({
         </Button>
       )}
 
+      {mostrarBotaoVoltarCarregando &&(
+        <Skeleton width={109} height={60} />
+      )}
+      
     </Box>
   )
 }
