@@ -1,10 +1,10 @@
-import { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { Dashboard, ListagemDePessoas } from "../pages";
-import { useDrawerContext } from "../shared/contexts";
+import { useEffect } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import { Dashboard, ListagemDePessoas } from '../pages'
+import { useDrawerContext } from '../shared/contexts'
 
 export const AppRoutes = () => {
-  const { setDrawerOptions } = useDrawerContext();
+  const { setDrawerOptions } = useDrawerContext()
 
   useEffect(() => {
     setDrawerOptions([
@@ -18,8 +18,8 @@ export const AppRoutes = () => {
         path: '/pessoas',
         label: 'Pessoas',
       },
-    ]);
-  }, []);
+    ])
+  }, [])
 
   return (
     <Routes>
@@ -30,5 +30,5 @@ export const AppRoutes = () => {
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
     </Routes>
-  );
-};
+  )
+}
