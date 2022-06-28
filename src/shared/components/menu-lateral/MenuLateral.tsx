@@ -56,7 +56,7 @@ export const MenuLateral: React.FC = ({ children }) => {
         <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
           
           <Box width="100%" height={theme.spacing(20)} display="flex" alignItems="center" justifyContent="center">
-            <Avatar sx={{ height: theme.spacing(12), width: theme.spacing(12) }} src="https://scontent.frvy1-1.fna.fbcdn.net/v/t39.30808-6/273207314_1205759309827923_651391042645074167_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LtFlku7UPboAX_vnGEE&tn=xsVMt3kD78h9xU5_&_nc_ht=scontent.frvy1-1.fna&oh=00_AT8wUfEJ0Ol0E2TlYcZq08ANiybYB_CHQHhDklC9PbZ98A&oe=62B6FB83"/>
+            <Avatar sx={{ height: theme.spacing(12), width: theme.spacing(12) }} src="https://scontent.frvy1-1.fna.fbcdn.net/v/t39.30808-6/273207314_1205759309827923_651391042645074167_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEkxKAVVIdpGdrMVVnkX8tGG4fyw4PkI6sbh_LDg-Qjqyc4kOFDQnU3y9iHdIOPJj2HK4xTsqdw8IJRX41m_Cqw&_nc_ohc=vkNzd-lDShcAX8cPhtk&tn=xsVMt3kD78h9xU5_&_nc_ht=scontent.frvy1-1.fna&oh=00_AT92gJ0UYb4sMp6YO-ZNKRECh_pLH2fwgf96kt7XSYhP2g&oe=62BEE483"/>
           </Box>
           
           <Divider />
