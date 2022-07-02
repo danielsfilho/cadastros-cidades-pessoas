@@ -1,16 +1,24 @@
-import { Form } from '@unform/web'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import { FormHandles } from '@unform/core'
+import { Form } from '@unform/web'
 
-import { FerramentasDeDetalhes } from '../../shared/components'
-import { VTextField } from '../../shared/forms'
-import { LayoutBaseDePagina } from '../../shared/layouts'
 import { PessoasService } from '../../shared/services/api/pessoas/PessoasService'
+import { FerramentasDeDetalhes } from '../../shared/components'
+import { LayoutBaseDePagina } from '../../shared/layouts'
+import { VTextField } from '../../shared/forms'
 
+interface IFormData {
+  email: string,
+  cidadeId: string,
+  nomeCompleto: string,
+}
 
 export const DetalheDePessoas: React.FC = () => {
   const { id = 'nova' } = useParams<'id'>()
   const navigate = useNavigate()
+
+  const formRef = useRef<FormHandles>(null)
 
   const [isLoading, setIsLoading] = useState(false)
   const [nome, setNome] = useState('')
@@ -35,8 +43,8 @@ export const DetalheDePessoas: React.FC = () => {
     }
   }, [id])
 
-  const handleSave = () => {
-    console.log('save')
+  const handleSave = (dados: IFormData) => {
+    console.log(dados)
   }
 
   const handleDelete = (id: number) => {
@@ -65,21 +73,20 @@ export const DetalheDePessoas: React.FC = () => {
           mostrarBotaoNovo={id !== 'nova'}
           mostrarBotaoSalvarEVoltar
 
-          aoClicarEmSalvar={handleSave}
-          aoClicarEmSalvarEVoltar={handleSave}
-          aoClicarEmApagar={() => handleDelete(Number(id))}
           aoClicarEmVoltar={() => {navigate('/pessoas')}}
+          aoClicarEmApagar={() => handleDelete(Number(id))}
+          aoClicarEmSalvar={() => formRef.current?.submitForm()}
           aoClicarEmNovo={() => {navigate('/pessoas/detalhe/nova')}}
+          aoClicarEmSalvarEVoltar={() => formRef.current?.submitForm()}
         />
       }
     >
-      <Form onSubmit={dados => console.log(dados)}>
-        <VTextField 
-          name="nomeCompleto"
+      <Form ref={formRef} onSubmit={handleSave}>
 
-        />
+        <VTextField name="nomeCompleto"/>
+        <VTextField name="email"/>
+        <VTextField name="cidadeId"/>
 
-        <button type="submit">Submit</button>
       </Form>
     </LayoutBaseDePagina>
   )
