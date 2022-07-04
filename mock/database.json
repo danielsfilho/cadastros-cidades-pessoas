@@ -14,9 +14,9 @@
     },
     {
       "id": 6,
-      "email": "daniel@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Daniel Silva"
+      "nomeCompleto": "Danilo Silva",
+      "email": "danilo@gmail.com",
+      "cidadeId": 1
     },
     {
       "id": 7,
@@ -71,6 +71,18 @@
       "email": "diego@gmail.com",
       "cidadeId": 1,
       "nomeCompleto": "Diego Silva"
+    },
+    {
+      "nomeCompleto": "José Silva",
+      "email": "jose@gmail.com",
+      "cidadeId": "1",
+      "id": 16
+    },
+    {
+      "nomeCompleto": "Lionel Silva",
+      "email": "lionel@gmail.com",
+      "cidadeId": "3",
+      "id": 17
     }
   ]
 }
