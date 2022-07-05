@@ -41,6 +41,12 @@ export const DetalheDePessoas: React.FC = () => {
             formRef.current?.setData(result)
           }
         })
+    } else {
+      formRef.current?.setData({
+        email: '',
+        cidadeId: '',
+        nomeCompleto: '',
+      })
     }
   }, [id])
 
