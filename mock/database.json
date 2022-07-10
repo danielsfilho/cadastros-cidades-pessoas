@@ -96,5 +96,11 @@
       "email": "jorginho@gmail.com",
       "cidadeId": "6"
     }
+  ],
+  "cidades": [
+    {
+      "nome": "Gramado",
+      "id": 1
+    }
   ]
 }
