@@ -10,7 +10,7 @@
       "id": 5,
       "nomeCompleto": "Gabriela",
       "email": "gabriela@gmail.com",
-      "cidadeId": 1
+      "cidadeId": 6
     },
     {
       "id": 6,
@@ -20,15 +20,15 @@
     },
     {
       "id": 7,
+      "nomeCompleto": "Eliana Silva",
       "email": "eliana@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Eliana Silva"
+      "cidadeId": 3
     },
     {
       "id": 8,
+      "nomeCompleto": "Jeremias Silva",
       "email": "jeremias@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Jeremias Silva"
+      "cidadeId": 2
     },
     {
       "id": 9,
@@ -44,9 +44,9 @@
     },
     {
       "id": 11,
+      "nomeCompleto": "Evandro Silva",
       "email": "evandro@gmail.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Evandro Silva"
+      "cidadeId": 5
     },
     {
       "id": 12,
@@ -101,6 +101,30 @@
     {
       "nome": "Gramado",
       "id": 1
+    },
+    {
+      "id": 2,
+      "nome": "Santana do Livramento"
+    },
+    {
+      "nome": "Canoas",
+      "id": 3
+    },
+    {
+      "nome": "Pelotas",
+      "id": 4
+    },
+    {
+      "nome": "Caxias do Sul",
+      "id": 5
+    },
+    {
+      "nome": "Bagé",
+      "id": 6
+    },
+    {
+      "nome": "Santa Maria",
+      "id": 7
     }
   ]
 }
