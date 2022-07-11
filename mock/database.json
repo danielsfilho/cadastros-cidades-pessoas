@@ -125,6 +125,10 @@
     {
       "nome": "Santa Maria",
       "id": 7
+    },
+    {
+      "nome": "Torres",
+      "id": 8
     }
   ]
 }
