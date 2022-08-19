@@ -5,7 +5,7 @@
 
 ## Ressalvas
 - Construção das interfaces: `ReactJS`;
-- Linguagem utilizada: `Typescript`;
+- Linguagem utilizada: `JavaScript com Typescript`;
 - Validação de dados: `unform`, `yup`;
 
 ## Características
